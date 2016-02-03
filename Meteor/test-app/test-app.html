@@ -1,0 +1,46 @@
+<head>
+  <title>test-app</title>
+</head>
+
+<body>
+  <h1>Cool Lists!</h1>
+
+<div class="container">
+  <ul>
+    {{#each states}}
+      {{>state}}
+    {{/each}}
+  </ul>
+
+</div>
+<div class="container">
+  <ul>
+    {{#each shapes}}
+      {{>shape}}
+    {{/each}}
+  </ul>
+</div>
+<div class="container">
+  <form class="new-color">
+    <input type="text" name="title" placeholder="color">
+  </form>
+  <ul>
+    {{#each colors}}
+      {{>color}}
+    {{/each}}
+  </ul>
+</div>
+
+</body>
+
+<template name="state">
+  <li>{{weather}}</li>
+</template>
+
+<template name="shape">
+  <li>{{glyph}}</li>
+</template>
+
+<template name="color">
+  <li>{{title}}</li>
+</template>
