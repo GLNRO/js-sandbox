@@ -3,20 +3,31 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Cool Lists!</h1>
 
+<div class="container">
   <ul>
     {{#each states}}
       {{>state}}
     {{/each}}
   </ul>
 
-  <hr>
+</div>
+<div class="container">
   <ul>
     {{#each shapes}}
       {{>shape}}
     {{/each}}
   </ul>
+</div>
+<div class="container">
+  <ul>
+    {{#each colors}}
+      {{>color}}
+    {{/each}}
+  </ul>
+</div>
+
 </body>
 
 <template name="state">
@@ -25,4 +36,8 @@
 
 <template name="shape">
   <li>{{glyph}}</li>
+</template>
+
+<template name="color">
+  <li>{{name}} , {{hex}}</li>
 </template>

@@ -1,4 +1,13 @@
+Colors = new Mongo.Collection("colors");
+
+
 if (Meteor.isClient) {
+
+  Template.body.helpers({
+    colors: function(){
+      return Colors.find({});
+    }
+  });
 
   Template.body.helpers({
     states: [
@@ -16,6 +25,8 @@ if (Meteor.isClient) {
       {glyph: "triangle"}
     ]
   });
+
+
 
 
 }
