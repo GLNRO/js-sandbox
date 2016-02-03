@@ -1,0 +1,28 @@
+<head>
+  <title>test-app</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  <ul>
+    {{#each states}}
+      {{>state}}
+    {{/each}}
+  </ul>
+
+  <hr>
+  <ul>
+    {{#each shapes}}
+      {{>shape}}
+    {{/each}}
+  </ul>
+</body>
+
+<template name="state">
+  <li>{{weather}}</li>
+</template>
+
+<template name="shape">
+  <li>{{glyph}}</li>
+</template>
