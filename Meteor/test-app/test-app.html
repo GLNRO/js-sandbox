@@ -6,14 +6,20 @@
   <h1>Cool Lists!</h1>
 
 <div class="container">
+  <form class="new-temp">
+    <input type="text" name="description" placeholder="weather">
+  </form>
   <ul>
-    {{#each states}}
-      {{>state}}
+    {{#each temps}}
+      {{>temp}}
     {{/each}}
   </ul>
 
 </div>
 <div class="container">
+  <form class="new-shape">
+    <input type="text" name="glyph" placeholder="shape">
+  </form>
   <ul>
     {{#each shapes}}
       {{>shape}}
@@ -33,14 +39,26 @@
 
 </body>
 
-<template name="state">
-  <li>{{weather}}</li>
+<template name="temp">
+    <li >
+    <button class="delete">&times;</button>
+    <span class="text">{{description}}</span>
+  </li>
 </template>
 
 <template name="shape">
-  <li>{{glyph}}</li>
+  <li >
+    <button class="delete">&times;</button>
+    <span class="text">{{glyph}}</span>
+  </li>
 </template>
 
 <template name="color">
-  <li>{{title}}</li>
+  <li class ="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+    <span class="text">{{title}}</span>
+    <span class="text">{{name}}</span>
+  </li>
 </template>
+
