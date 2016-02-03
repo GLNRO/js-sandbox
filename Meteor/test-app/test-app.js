@@ -9,6 +9,19 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.body.events({
+    "submit .new-color": function (event){
+      event.preventDefault();
+      var title = event.target.title.value;
+
+      Colors.insert({
+        title: title,
+        createdAt: new Date()
+      })
+      event.target.title.value = "";
+    }
+  });
+
   Template.body.helpers({
     states: [
       { weather: "sunny "},

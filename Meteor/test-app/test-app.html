@@ -21,6 +21,9 @@
   </ul>
 </div>
 <div class="container">
+  <form class="new-color">
+    <input type="text" name="title" placeholder="color">
+  </form>
   <ul>
     {{#each colors}}
       {{>color}}
@@ -39,5 +42,5 @@
 </template>
 
 <template name="color">
-  <li>{{name}} , {{hex}}</li>
+  <li>{{title}}</li>
 </template>
